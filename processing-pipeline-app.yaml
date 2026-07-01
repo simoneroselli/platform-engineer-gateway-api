@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dynamic-task-pipeline
+  namespace: argocd
+spec:
+  project: default
+  source:
+    # Target your personal github repo directory where the manifests live
+    repoURL: 'https://github.com/simoneroselli/platform-engineer-gateway-app.git'
+    targetRevision: HEAD
+    path: platform-workloads/task-pipeline/overlays/local-dev
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: core-processing-zone
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
