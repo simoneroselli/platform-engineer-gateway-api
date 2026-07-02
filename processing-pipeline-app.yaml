@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     # Target your personal github repo directory where the manifests live
-    repoURL: 'https://github.com/simoneroselli/platform-engineer-gateway-app.git'
+    repoURL: 'https://github.com/simoneroselli/platform-engineer-gateway-api.git'
     targetRevision: HEAD
     path: platform-workloads/task-pipeline/overlays/local-dev
   destination:
