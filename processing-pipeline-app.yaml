@@ -12,7 +12,7 @@ spec:
     path: platform-workloads/task-pipeline/overlays/local-dev
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: core-processing-zone
+    namespace: processing-pipeline
   syncPolicy:
     automated:
       prune: true
