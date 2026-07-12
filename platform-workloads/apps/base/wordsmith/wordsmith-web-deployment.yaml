@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordsmith-web
+  namespace: wordsmith-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wordsmith-web
+  template:
+    metadata:
+      labels:
+        app: wordsmith-web
+    spec:
+      containers:
+      - name: web
+        image: dockersamples/wordsmith-web:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: API_HOST
+          value: "wordsmith-api:80"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: wordsmith-web
+  namespace: wordsmith-app
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+  selector:
+    app: wordsmith-web
