@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: dockersamples/wordsmith-api:latest
+        image: dockersamples/k8s-wordsmith-api:latest
         ports:
         - containerPort: 8080
 ---
