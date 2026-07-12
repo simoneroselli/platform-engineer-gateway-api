@@ -9,7 +9,7 @@ spec:
     # Target your personal github repo directory where the manifests live
     repoURL: 'https://github.com/simoneroselli/platform-engineer-gateway-api.git'
     targetRevision: HEAD
-    path: platform-workloads/task-pipeline/overlays/local-dev
+    path: platform-workloads/apps/overlays/local-dev
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: processing-pipeline
