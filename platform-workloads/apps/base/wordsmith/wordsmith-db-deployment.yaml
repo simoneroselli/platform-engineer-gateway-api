@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: db
-        image: dockersamples/wordsmith-db:v1
+        image: dockersamples/k8s-wordsmith-db:latest
         ports:
         - containerPort: 5432
 ---
