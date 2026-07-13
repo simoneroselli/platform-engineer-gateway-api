@@ -5,3 +5,4 @@ metadata:
   namespace: wordsmith-app
 spec:
   replicas: 2
+status: {}
