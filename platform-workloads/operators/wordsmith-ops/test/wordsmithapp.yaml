@@ -1,0 +1,7 @@
+apiVersion: my.domain/v1
+kind: WordsmithApp
+metadata:
+  name: test-wordsmith-instance
+  namespace: wordsmith-app
+spec:
+  replicas: 2
