@@ -9,7 +9,7 @@ kind: ClusterRole
 metadata:
   name: wordsmith-operator-role
 rules:
-  - apiGroups: ["my.domain"]
+  - apiGroups: ["padre.maronno"]
     resources: ["wordsmithapps"]
     verbs: ["get", "list", "watch", "patch", "update"]
   - apiGroups: ["apps"]

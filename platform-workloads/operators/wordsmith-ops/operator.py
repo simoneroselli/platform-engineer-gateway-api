@@ -1,7 +1,7 @@
 import kopf
 import kubernetes
 
-@kopf.on.cretae('my.domain', 'v1', 'myapps')
+@kopf.on.create('padre.maronno', 'v1', 'myapps')
 def create_fn(spec, name, namespace, logger, **kwargs):
     # This function triggers when you create a new "MyApp" CR
     logger.info(f"A new MyApp {name} was created with spec: {spec}")

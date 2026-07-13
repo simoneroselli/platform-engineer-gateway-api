@@ -1,9 +1,9 @@
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  name: wordsmithapps.my.domain
+  name: wordsmithapps.padre.maronno
 spec:
-  group: my.domain
+  group: padre.maronno
   versions:
     - name: v1
       served: true
