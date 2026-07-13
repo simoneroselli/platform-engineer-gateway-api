@@ -1,4 +1,4 @@
-apiVersion: my.domain/v1
+apiVersion: padre.maronno/v1
 kind: WordsmithApp
 metadata:
   name: test-wordsmith-instance
