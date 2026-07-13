@@ -17,11 +17,14 @@ spec:
       containers:
         - name: operator
           image: python:3.9-slim # You'll replace this with your actual image later
-          command: ["kopf", "run", "/src/operator.py", "--verbose"]
+          # Install kopf inside the container at startup
+          command: ["/bin/sh", "-c"]
+          args: 
+            - "pip install kopf kubernetes && kopf run /src/operator.py --verbose"
           volumeMounts:
             - name: operator-code
               mountPath: /src
       volumes:
         - name: operator-code
           configMap:
-            name: wordsmith-operator-code # You'll store the operator.py here for now
+            name: wordsmith-operator-code
