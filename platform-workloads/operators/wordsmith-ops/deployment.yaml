@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordsmith-operator
+  namespace: wordsmith-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: wordsmith-operator
+  template:
+    metadata:
+      labels:
+        name: wordsmith-operator
+    spec:
+      serviceAccountName: wordsmith-operator-sa
+      containers:
+        - name: operator
+          image: python:3.9-slim # You'll replace this with your actual image later
+          command: ["kopf", "run", "/src/operator.py", "--verbose"]
+          volumeMounts:
+            - name: operator-code
+              mountPath: /src
+      volumes:
+        - name: operator-code
+          configMap:
+            name: wordsmith-operator-code # You'll store the operator.py here for now
