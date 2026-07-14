@@ -2,7 +2,7 @@ apiVersion: padre.maronno/v1
 kind: WordsmithApp
 metadata:
   name: test-wordsmith-instance
-  namespace: wordsmith-app
+  namespace: operators
 spec:
   replicas: 3
 status: {}
