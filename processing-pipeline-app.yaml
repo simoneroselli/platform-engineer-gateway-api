@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: dynamic-task-pipeline
+  name: apps-task-pipeline
   namespace: argocd
 spec:
   project: default
