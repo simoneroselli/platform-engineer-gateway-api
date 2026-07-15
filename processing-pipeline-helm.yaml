@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: helm-wordsmith-task-pipeline
+  namespace: argocd
+spec:
+  project: default
+  source:
+    # Target your personal github repo directory where the manifests live
+    repoURL: 'https://github.com/simoneroselli/platform-engineer-gateway-api.git'
+    targetRevision: HEAD
+    path: platform-workloads/charts/wordsmith
+    helm:
+      valueFiles:
+        - ../../environments/dev/values.yaml
+        - ../../environments/prod/values.yaml
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: processing-pipeline
+
+  
