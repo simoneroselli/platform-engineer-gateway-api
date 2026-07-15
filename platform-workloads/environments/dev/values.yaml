@@ -1,5 +1,9 @@
+web:
+  replicaCount: 1
+  image: "dockersamples/k8s-wordsmith-web:latest"
 api:
   replicaCount: 1
-  image:
-    repository: dockersamples/k8s-wordsmith-api
-    tag: latest
+  image: "dockersamples/k8s-wordsmith-api:latest"
+db:
+  replicaCount: 1
+  image: "dockersamples/k8s-wordsmith-db:latest"

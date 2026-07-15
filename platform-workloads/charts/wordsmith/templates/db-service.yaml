@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "wordsmith.fullname" . }}-db
+  namespace: {{ include "wordsmith.fullname" . }}-app
+spec:
+  type: ClusterIP
+  ports:
+  - port: 5432
+    targetPort: 5432
+    protocol: TCP
+  selector:
+    app: {{ include "wordsmith.fullname" . }}-db
