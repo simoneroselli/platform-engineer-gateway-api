@@ -4,7 +4,7 @@ metadata:
   name: '{{ include "wordsmith.fullname" . }}-web'
   namespace: '{{ .Values.namespace | default "wordsmith-app" }}'
 spec:
-  replicas: '{{ .Values.api.replicaCount }}'
+  replicas: {{ .Values.api.replicaCount }}
   selector:
     matchLabels:
       app: '{{ include "wordsmith.fullname" . }}-web'
