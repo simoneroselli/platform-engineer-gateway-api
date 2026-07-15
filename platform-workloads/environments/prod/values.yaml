@@ -1,5 +1,6 @@
 # environments/prod/values.yaml
 namespace: wordsmith-prod-app
+version: 0.2.0
 web:
   replicaCount: 3  # Scale out for production
 api:
