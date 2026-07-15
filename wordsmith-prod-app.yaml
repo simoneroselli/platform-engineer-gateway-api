@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: wordsmith-prod-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/simoneroselli/platform-engineer-gateway-api.git'
+    path: platform-workloads/charts/wordsmith
+    helm:
+      valueFiles:
+      - ../../environments/prod/values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: wordsmith-prod-app
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true

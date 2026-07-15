@@ -1,5 +1,4 @@
 # Global/Default values
-namespace: wordsmith-app
 fullname: wordsmith
 
 web:
