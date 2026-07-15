@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: db
-  namespace: {{ .Values.namespace | default "wordsmith-app" }}
+  namespace: '{{ .Values.namespace | default "wordsmith-app" }}'
 spec:
   type: ExternalName
   externalName: wordsmith-db.wordsmith-app.svc.cluster.local

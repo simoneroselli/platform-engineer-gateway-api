@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "wordsmith.fullname" . }}-db
-  namespace: {{ .Values.namespace | default "wordsmith-app" }}
+  name: '{{ include "wordsmith.fullname" . }}-db'
+  namespace: '{{ .Values.namespace | default "wordsmith-app" }}'
 spec:
   type: ClusterIP
   ports:
@@ -10,4 +10,4 @@ spec:
     targetPort: 5432
     protocol: TCP
   selector:
-    app: {{ include "wordsmith.fullname" . }}-db
+    app: '{{ include "wordsmith.fullname" . }}-db'

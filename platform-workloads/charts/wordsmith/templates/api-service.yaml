@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: api
-  namespace: {{ .Values.namespace | default "wordsmith-app" }}
+  namespace: '{{ .Values.namespace | default "wordsmith-app" }}'
 spec:
   type: ClusterIP
   ports:
@@ -10,4 +10,4 @@ spec:
     targetPort: 8080
     protocol: TCP
   selector:
-    app: {{ include "wordsmith.fullname" . }}-api
+    app: '{{ include "wordsmith.fullname" . }}-api'
