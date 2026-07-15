@@ -5,3 +5,5 @@ web:
   replicaCount: 1  # Scale out for production
 api:
   replicaCount: 1
+database:
+  host: "wordsmith-db.wordsmith-dev-app.svc.cluster.local"

@@ -5,4 +5,4 @@ metadata:
   namespace: '{{ .Values.namespace | default "wordsmith-app" }}'
 spec:
   type: ExternalName
-  externalName: wordsmith-db.wordsmith-app.svc.cluster.local
+  externalName: '{{ .Values.database.host | default "wordsmith-db" }}'
