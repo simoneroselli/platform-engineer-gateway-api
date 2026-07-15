@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: {{ include "wordsmith.fullname" . }}-web
-  namespace: {{ include "wordsmith.fullname" . }}-app
+  namespace: {{ .Values.namespace | default "wordsmith-app" }}
 spec:
   type: ClusterIP
   ports:

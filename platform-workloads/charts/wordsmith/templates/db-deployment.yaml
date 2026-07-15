@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "wordsmith.fullname" . }}-db
-  namespace: {{ include "wordsmith.fullname" . }}-app
+  namespace: {{ .Values.namespace | default "wordsmith-app" }}
 spec:
   replicas: {{ .Values.api.replicaCount }}
   selector:

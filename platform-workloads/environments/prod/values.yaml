@@ -1,9 +1,5 @@
+# environments/prod/values.yaml
 web:
-  replicaCount: 1
-  image: "dockersamples/k8s-wordsmith-web:latest"
+  replicaCount: 3  # Scale out for production
 api:
-  replicaCount: 1
-  image: "dockersamples/k8s-wordsmith-api:latest"
-db:
-  replicaCount: 1
-  image: "dockersamples/k8s-wordsmith-db:latest"
+  replicaCount: 3
