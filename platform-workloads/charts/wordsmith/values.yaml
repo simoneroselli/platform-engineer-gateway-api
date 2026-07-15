@@ -5,13 +5,13 @@ fullname: wordsmith
 web:
   replicaCount: 1
   image:
-    repository: dockersamples/k8s-wordsmith-web:latest
+    repository: dockersamples/k8s-wordsmith-web
     tag: latest
 
 api:
   replicaCount: 1
   image:
-    repository: dockersamples/k8s-wordsmith-api:latest
+    repository: dockersamples/k8s-wordsmith-api
     tag: latest
 
 db:
