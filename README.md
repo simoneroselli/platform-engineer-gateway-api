@@ -33,7 +33,7 @@ The application follows a clean, decoupled microservices architecture:
 ## Repository Structure
 ```text
 .
-├── charts/             # Centralized Helm chart for the application
-├── environments/       # Environment-specific values.yaml (dev, prod)
-├── operators/          # Custom operator logic (Python/Kopf)
 └── platform-workloads/ # ArgoCD ApplicationSet and Gateway API manifests
+   ├── charts/             # Centralized Helm chart for the application
+   ├── environments/       # Environment-specific values.yaml (dev, prod)
+   ├── operators/          # Custom operator logic (Python/Kopf)
