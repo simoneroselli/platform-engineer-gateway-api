@@ -34,6 +34,6 @@ The application follows a clean, decoupled microservices architecture:
 ```text
 .
 └── platform-workloads/ # ArgoCD ApplicationSet and Gateway API manifests
-   ├── charts/             # Centralized Helm chart for the application
+   ├──charts/             # Centralized Helm chart for the application
    ├── environments/       # Environment-specific values.yaml (dev, prod)
    ├── operators/          # Custom operator logic (Python/Kopf)
