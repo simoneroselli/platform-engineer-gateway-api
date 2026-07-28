@@ -1,6 +1,15 @@
 # environments/prod/values.yaml
 namespace: wordsmith-prod-app
 version: 0.2.0
+ingress:
+  stable:
+    path: "/"
+    host: "wordsmith.local"
+  canary:
+    path: "/"
+    host: "wordsmith.local"
+    canary: "true"
+    canary-weight: "10"
 web:
   replicaCount: 1  # Scale out for production
 api:
