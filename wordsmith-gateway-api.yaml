@@ -12,7 +12,7 @@ spec:
     path: platform-workloads/gateway-api
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: processing-pipeline
+    namespace: wordsmith-gateway-api
   syncPolicy:
     automated:
       prune: true
