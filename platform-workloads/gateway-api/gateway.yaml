@@ -1,0 +1,15 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: wordsmith-gateway
+  namespace: default # Or your ingress/gateway controller namespace
+spec:
+  gatewayClassName: nginx # This links to your installed GatewayClass provider (e.g., Nginx, Envoy, etc.)
+  listeners:
+  - name: http
+    protocol: HTTP
+    port: 80
+    hostname: "*.wordsmith.local" # Can also be specific like wordsmith.local
+    allowedRoutes:
+      namespaces:
+        from: All # Allows HTTPRoutes from any namespace (crucial for multi-tenant dev/prod!)
