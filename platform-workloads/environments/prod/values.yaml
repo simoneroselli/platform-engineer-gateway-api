@@ -9,7 +9,7 @@ ingress:
     path: "/"
     host: "wordsmith.local"
     canary: "true"
-    canary-weight: "10"
+    canary_weight: "10"
 web:
   replicaCount: 1  # Scale out for production
 api:

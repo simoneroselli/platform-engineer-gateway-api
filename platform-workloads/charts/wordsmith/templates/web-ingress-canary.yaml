@@ -6,7 +6,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: "nginx"
     nginx.ingress.kubernetes.io/canary: '{{ .Values.ingress.canary.canary }}'
-    nginx.ingress.kubernetes.io/canary-weight: '{{ .Values.ingress.canary.canary-weight }}'
+    nginx.ingress.kubernetes.io/canary-weight: '{{ .Values.ingress.canary.canary_weight }}'
 spec:
   rules:
   - host: {{ .Values.ingress.canary.host }}
