@@ -9,7 +9,7 @@ spec:
     # Target your personal github repo directory where the manifests live
     repoURL: 'https://github.com/simoneroselli/platform-engineer-gateway-api.git'
     targetRevision: HEAD
-    path: platform-workloads/gateway-api
+    path: platform-workloads/charts/gateway-api
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: wordsmith-gateway-api
