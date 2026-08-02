@@ -1,7 +1,6 @@
 # Global/Default values
 gatewayFullname: wordsmith-gateway
 gatewayNamespace: traefik-system
-
 web:
   replicaCount: 1
   image:

@@ -10,7 +10,7 @@ spec:
     path: platform-workloads/charts/wordsmith
     helm:
       valueFiles:
-      - ../../environments/dev/values.yaml
+      - ../environments/dev/values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: wordsmith-dev-app

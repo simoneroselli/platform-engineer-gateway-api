@@ -5,4 +5,4 @@ metadata:
   namespace: '{{ .Values.appFullname }}'
 spec:
   type: ExternalName
-  externalName: '{{ .Values.app.database.host }}'
+  externalName: '{{ .Values.database.host }}'
