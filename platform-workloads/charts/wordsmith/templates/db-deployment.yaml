@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: '{{ .Values appFullname }}-db'
-  namespace: '{{ .Values appFullname }}'
+  name: '{{ .Values.appFullname }}-db'
+  namespace: '{{ .Values.appFullname }}'
 spec:
   replicas: '{{ .Values.db.replicaCount }}'
   selector:
     matchLabels:
-      app: '{{ .Values appFullname }}-db'
+      app: '{{ .Values.appFullname }}-db'
   template:
     metadata:
       labels:
-        app: '{{ .Values appFullname }}-db'
+        app: '{{ .Values.appFullname }}-db'
     spec:
       containers:
       - name: db

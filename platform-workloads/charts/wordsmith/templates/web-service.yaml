@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: '{{ .Values appFullname }}-web'
-  namespace: '{{ .Values appFullname }}'
+  name: '{{ .Values.appFullname }}-web'
+  namespace: '{{ .Values.appFullname }}'
 spec:
   type: ClusterIP
   ports:
@@ -10,4 +10,4 @@ spec:
     targetPort: 80
     protocol: TCP
   selector:
-    app: '{{ .Values appFullname }}-web'
+    app: '{{ .Values.appFullname }}-web'

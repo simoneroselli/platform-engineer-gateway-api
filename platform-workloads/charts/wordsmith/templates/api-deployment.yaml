@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: '{{ include "wordsmith.fullname" . }}-api'
-  namespace: '{{ .Values.namespace | default "wordsmith-app" }}'
+  name: '{{ .Values.appFullname }}-api'
+  namespace: '{{ .Values.appFullname }}'
 spec:
   replicas: {{ .Values.api.replicaCount }}
   selector:
     matchLabels:
-      app: '{{ include "wordsmith.fullname" . }}-api'
+      app: '{{ .Values.appFullname }}-api'
   template:
     metadata:
       labels:
-        app: '{{ include "wordsmith.fullname" . }}-api'
+        app: '{{ .Values.appFullname }}-api'
     spec:
       containers:
-      - name: api
+      - name: '{{ .Values.appFullname }}-api'
         image: '{{ .Values.api.image.repository }}:{{ .Values.api.image.tag }}'
         ports:
         - containerPort: 8080
