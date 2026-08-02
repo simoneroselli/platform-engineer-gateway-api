@@ -16,6 +16,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: wordsmith-web
+            name: wordsmith-prod-app-web
             port:
               number: 80
