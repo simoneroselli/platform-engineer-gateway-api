@@ -1,18 +1,21 @@
 # environments/dev/values.yaml
-namespace: wordsmith-dev-app
-ingress:
-  stable:
-    path: "/"
-    host: "wordsmith.local"
-  canary:
-    path: "/"
-    host: "wordsmith.local"
-    canary: "true"
-    canary_weight: "10"
+appFullname: wordsmith-dev-app
 version: 0.1.0
-web:
-  replicaCount: 1  # Scale out for production
-api:
-  replicaCount: 1
-database:
-  host: "wordsmith-db.wordsmith-dev-app.svc.cluster.local"
+app:
+  web:
+    replicaCount: 1  # Scale out for production
+  api:
+    replicaCount: 1
+  database:
+    host: "wordsmith-db.wordsmith-dev-app.svc.cluster.local"
+
+# LEGACY
+# ingress:
+#   stable:
+#     path: "/"
+#     host: "wordsmith.local"
+#   canary:
+#     path: "/"
+#     host: "wordsmith.local"
+#     canary: "true"
+#     canary_weight: "10"

@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: '{{ include "wordsmith.fullname" . }}-web'
-  namespace: '{{ .Values.namespace | default "wordsmith-app" }}'
+  name: '{{ .Values appFullname }}-web'
+  namespace: '{{ .Values appFullname }}'
 spec:
   replicas: {{ .Values.api.replicaCount }}
   selector:
     matchLabels:
-      app: '{{ include "wordsmith.fullname" . }}-web'
+      app: '{{ .Values appFullname }}-web'
   template:
     metadata:
       labels:
-        app: '{{ include "wordsmith.fullname" . }}-web'
+        app: '{{ .Values appFullname }}-web'
     spec:
       containers:
       - name: web

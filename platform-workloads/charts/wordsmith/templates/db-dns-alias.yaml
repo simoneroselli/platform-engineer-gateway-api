@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: db
-  namespace: '{{ .Values.namespace | default "wordsmith-app" }}'
+  name: db-dns-alias
+  namespace: '{{ .Values appFullname }}'
 spec:
   type: ExternalName
-  externalName: '{{ .Values.database.host | default "wordsmith-db" }}'
+  externalName: '{{ .Values.app.database.host }}'

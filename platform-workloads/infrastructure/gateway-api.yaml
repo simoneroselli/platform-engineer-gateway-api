@@ -25,3 +25,19 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+      
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: wordsmith-gateway
+  namespace: traefik-system # or your application namespace depending on your RBAC setup
+spec:
+  gatewayClassName: traefik # Refers to the Traefik GatewayClass installed in your cluster
+  listeners:
+  - name: web
+    protocol: HTTP
+    port: 80
+    allowedRoutes:
+      namespaces:
+        from: All
