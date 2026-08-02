@@ -16,6 +16,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: wordsmith-web-canary
+            name: wordsmith-web
             port:
               number: 80
