@@ -1,9 +1,10 @@
 # environments/dev/values.yaml
 namespace: wordsmith-dev-app
 ingress:
-  path: "/"
-  host: "wordsmith.local"
-canary:
+  stable:
+    path: "/"
+    host: "wordsmith.local"
+  canary:
     path: "/"
     host: "wordsmith.local"
     canary: "true"
