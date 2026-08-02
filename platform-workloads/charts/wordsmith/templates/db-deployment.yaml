@@ -4,7 +4,7 @@ metadata:
   name: '{{ .Values.appFullname }}-db'
   namespace: '{{ .Values.appFullname }}'
 spec:
-  replicas: '{{ .Values.db.replicaCount }}'
+  replicas: {{ .Values.db.replicaCount }}
   selector:
     matchLabels:
       app: '{{ .Values.appFullname }}-db'
