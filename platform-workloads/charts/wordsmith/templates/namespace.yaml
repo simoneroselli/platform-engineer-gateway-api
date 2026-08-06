@@ -4,3 +4,4 @@ metadata:
   name: '{{ .Values.appFullname }}'
   labels:
     apps.kubernetes.io/managed-by: platform-team
+    istio-injection: enabled
