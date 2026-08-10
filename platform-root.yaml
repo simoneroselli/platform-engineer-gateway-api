@@ -22,7 +22,7 @@ spec:
         chart: platform-workloads/charts/wordsmith
         helm:
           valueFiles:
-            - platform-workloads/environments/{{env}}/values.yaml
+            - '../../environments/{{env}}/values.yaml'
       destination:
         server: https://kubernetes.default.svc
         namespace: 'wordsmith-{{env}}-app'
