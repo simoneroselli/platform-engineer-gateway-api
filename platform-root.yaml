@@ -21,7 +21,7 @@ spec:
       source:
         repoURL: 'https://github.com/simoneroselli/platform-engineer-gateway-api.git'
         targetRevision: HEAD
-        path: platform-workloads/charts
+        path: platform-workloads/charts/wordsmith
         helm:
           valueFiles:
             - ../../{{valuesFile}}
