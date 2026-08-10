@@ -8,11 +8,11 @@ spec:
     - list:
         elements:
           - env: dev
+            path: platform-workloads/environments/dev
             namespace: wordsmith-dev-app
-            valuesFile: platform-workloads/environments/dev-values.yaml
           - env: prod
+            path: platform-workloads/environments/prod
             namespace: wordsmith-prod-app
-            valuesFile: platform-workloads/environments/prod-values.yaml
   template:
     metadata:
       name: 'wordsmith-{{env}}-app'
@@ -21,14 +21,13 @@ spec:
       source:
         repoURL: 'https://github.com/simoneroselli/platform-engineer-gateway-api.git'
         targetRevision: HEAD
-        path: platform-workloads/charts/wordsmith
-        helm:
-          valueFiles:
-            - ../../{{valuesFile}}
+        path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
-        namespace: wordsmith-{{env}}-app
+        namespace: '{{namespace}}'
       syncPolicy:
         automated:
           prune: true
           selfHeal: true
+        syncOptions:
+          - CreateNamespace=true

@@ -1,0 +1,7 @@
+apiVersion: v2
+name: wordsmith-prod
+version: 0.1.0
+dependencies:
+  - name: wordsmith
+    version: "0.1.0"
+    repository: "file://../../charts/wordsmith"
