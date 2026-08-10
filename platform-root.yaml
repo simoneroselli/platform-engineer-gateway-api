@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: platform-workloads-set
+  namespace: argocd
+spec:
+  generators:
+    - list:
+        elements:
+          - env: dev
+            path: platform-workloads/environments/dev
+          - env: prod
+            path: platform-workloads/environments/prod
+  template:
+    metadata:
+      name: 'wordsmith-{{env}}'
+    spec:
+      project: default
+      source:
+        repoURL: 'https://github.com/simoneroselli/platform-engineer-gateway-api.git'
+        targetRevision: HEAD
+        chart: platform-workloads/charts/wordsmith
+        helm:
+          valueFiles:
+            - platform-workloads/environments/{{env}}/values.yaml
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: 'wordsmith-{{env}}-app'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
