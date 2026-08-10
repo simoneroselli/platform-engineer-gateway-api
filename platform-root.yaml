@@ -8,9 +8,7 @@ spec:
     - list:
         elements:
           - env: dev
-            path: platform-workloads/environments/dev
           - env: prod
-            path: platform-workloads/environments/prod
   template:
     metadata:
       name: 'wordsmith-{{env}}-app'
@@ -22,7 +20,7 @@ spec:
         path: platform-workloads/charts/wordsmith
         helm:
           valueFiles:
-            - /platform-workloads/environments/{{env}}/values.yaml
+            - platform-workloads/environments/{{env}}/values.yaml
       destination:
         server: https://kubernetes.default.svc
         namespace: wordsmith-{{env}}-app
