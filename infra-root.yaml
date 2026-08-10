@@ -31,7 +31,7 @@ spec:
   source:
     repoURL: https://github.com/simoneroselli/platform-engineer-gateway-api.git
     targetRevision: HEAD
-    path: platform-workloads/infrastructure/gateway-api
+    path: platform-workloads/infrastructure/gateways
   destination:
     server: https://kubernetes.default.svc
     namespace: traefik-system # Or your gateway namespace
