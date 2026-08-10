@@ -16,7 +16,7 @@ app:
 
   database:
     replicaCount: 1
+    host: "localhost"
     image:
       repository: dockersamples/k8s-wordsmith-db
       tag: latest
-    host: "localhost"

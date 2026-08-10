@@ -4,7 +4,7 @@ metadata:
   name: '{{ .Values.appFullname }}-db'
   namespace: '{{ .Values.appFullname }}'
 spec:
-  replicas: {{ .Values.app.db.replicaCount }}
+  replicas: {{ .Values.app.database.replicaCount }}
   selector:
     matchLabels:
       app: '{{ .Values.appFullname }}-db'
@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: db
-        image: '{{ .Values.db.image.repository }}:{{ .Values.db.image.tag }}'
+        image: '{{ .Values.app.database.image.repository }}:{{ .Values.app.database.image.tag }}'
         ports:
         - containerPort: 5432
