@@ -19,7 +19,7 @@ spec:
       source:
         repoURL: 'https://github.com/simoneroselli/platform-engineer-gateway-api.git'
         targetRevision: HEAD
-        chart: platform-workloads/charts/wordsmith
+        path: platform-workloads/charts/wordsmith
         helm:
           valueFiles:
             - '../../environments/{{env}}/values.yaml'
