@@ -1,7 +1,7 @@
 # environments/prod/values.yaml
 appFullname: wordsmith-prod-app
 version: 0.2.0
-app:
+wordsmith:
   web:
     replicaCount: 1
   api:

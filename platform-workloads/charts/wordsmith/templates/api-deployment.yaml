@@ -4,7 +4,7 @@ metadata:
   name: '{{ .Values.appFullname }}-api'
   namespace: '{{ .Values.appFullname }}'
 spec:
-  replicas: {{ .Values.app.api.replicaCount }}
+  replicas: {{ .Values.wordsmith.api.replicaCount }}
   selector:
     matchLabels:
       app: '{{ .Values.appFullname }}-api'
