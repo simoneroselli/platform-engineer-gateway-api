@@ -32,6 +32,8 @@ kind: Gateway
 metadata:
   name: wordsmith-gateway
   namespace: traefik-system
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   gatewayClassName: traefik
   listeners:
