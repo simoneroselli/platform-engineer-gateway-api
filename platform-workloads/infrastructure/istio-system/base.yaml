@@ -20,4 +20,4 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
-      - ServerSideApply=true # Required for Istio CRDs to prevent field-manager conflicts
+      - ServerSideApply=true
