@@ -22,6 +22,9 @@ spec:
         repoURL: 'https://github.com/simoneroselli/platform-engineer-gateway-api.git'
         targetRevision: HEAD
         path: '{{path}}'
+        helm:
+          valueFiles:
+            - values.yaml
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{namespace}}'
