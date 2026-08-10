@@ -9,11 +9,11 @@ spec:
         elements:
           - env: dev
             path: platform-workloads/environments/dev
-          # - env: prod
-          #   path: platform-workloads/environments/prod
+          - env: prod
+            path: platform-workloads/environments/prod
   template:
     metadata:
-      name: 'wordsmith-{{env}}'
+      name: 'wordsmith-{{env}}-app'
     spec:
       project: default
       source:
