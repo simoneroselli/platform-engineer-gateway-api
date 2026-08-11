@@ -63,6 +63,13 @@ spec:
         experimental:
           kubernetesGateway:
             enabled: true
+        ports:
+          web:
+            port: 9080
+            targetPort: 8000
+          websecure:
+            port: 9443
+            targetPort: 8443
   destination:
     server: https://kubernetes.default.svc
     namespace: traefik-system
