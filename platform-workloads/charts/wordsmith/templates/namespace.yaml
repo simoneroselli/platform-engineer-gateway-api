@@ -1,0 +1,7 @@
+# File path: platform-workloads/environments/prod/namespace.yaml (or your environment namespace file)
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: '{{ .Values.appFullname }}'
+  labels:
+    istio-injection: enabled
