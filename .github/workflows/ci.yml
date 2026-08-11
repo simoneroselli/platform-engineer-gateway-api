@@ -40,9 +40,6 @@ jobs:
   
   validate-operator:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: platform-workloads/operators/wordsmith-ops
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -55,8 +52,8 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install -r requirements.txt
           python -m pip install --upgrade pip
+          pip install -r platform-workloads/operators/wordsmith-ops/requirements.txt
       
       # - name: Install Dependencies 2
       #   run: |
