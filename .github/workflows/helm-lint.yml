@@ -1,0 +1,39 @@
+name: Helm Validate and Template Check
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  validate-charts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Helm
+        uses: azure/setup-helm@v3
+        with:
+          version: latest
+
+      - name: Lint Helm Chart with Values
+        run: |
+          echo "Linting Wordsmith chart with development values..."
+          helm lint platform-workloads/charts/wordsmith -f platform-workloads/environments/dev/values.yaml
+          
+          echo "Linting Wordsmith chart with production values..."
+          helm lint platform-workloads/charts/wordsmith -f platform-workloads/environments/prod/values.yaml
+
+      - name: Silent Template Rendering Check (Dev)
+        run: |
+          echo "Checking dev template compilation..."
+          helm template wordsmith-dev-app platform-workloads/charts/wordsmith \
+            -f platform-workloads/environments/dev/values.yaml \
+            --namespace wordsmith-dev-app > /dev/null
+
+      - name: Silent Template Rendering Check (Prod)
+        run: |
+          echo "Checking prod template compilation..."
+          helm template wordsmith-prod platform-workloads/charts/wordsmith \
+            -f platform-workloads/environments/prod/values.yaml \
+            --namespace wordsmith-prod-app > /dev/null
