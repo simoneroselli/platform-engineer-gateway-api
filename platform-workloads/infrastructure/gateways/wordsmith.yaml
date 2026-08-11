@@ -5,6 +5,9 @@ metadata:
   namespace: traefik-system
   annotations:  
     argocd.argoproj.io/sync-wave: "2"
+  allowedRoutes:
+    namespaces:
+      from: All
 spec:
   gatewayClassName: traefik
   listeners:
