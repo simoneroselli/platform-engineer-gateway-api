@@ -34,7 +34,7 @@ spec:
     path: platform-workloads/infrastructure/gateways
   destination:
     server: https://kubernetes.default.svc
-    namespace: traefik-system # Or your gateway namespace
+    namespace: traefik-system
   syncPolicy:
     automated: { prune: true, selfHeal: true }
     syncOptions: [CreateNamespace=true]
