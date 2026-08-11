@@ -3,7 +3,7 @@
 Welcome to the Platform Engineer Gateway API laboratory project! This repository is designed to explore and master modern Kubernetes platform engineering practices. Instead of focusing on basic single-application deployments, this lab dives into the complexities of running dynamic, multi-environment microservice architectures using an industry-standard cloud-native stack.
 
 ## 🏛️ Core Learning Objectives & Pillars
-This project is structured around four foundational pillars of modern Kubernetes operations:
+This project is structured around five foundational pillars of modern Kubernetes operations:
 
 ### 1. GitOps Orchestration with ArgoCD
 
