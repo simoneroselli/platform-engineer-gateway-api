@@ -15,6 +15,3 @@ spec:
         port: 80
         expose:
           default: true
-    entryPoints:
-      web:
-        address: ":80"
