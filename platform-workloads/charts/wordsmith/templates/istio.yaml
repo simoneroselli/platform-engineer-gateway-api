@@ -1,0 +1,9 @@
+# File path: platform-workloads/environments/prod/istio-security.yaml
+apiVersion: security.istio.io/v1
+kind: PeerAuthentication
+metadata:
+  name: wordsmith-strict-mtls
+  namespace: '{{ .Values.appFullname }}'
+spec:
+  mtls:
+    mode: STRICT
