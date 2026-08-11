@@ -58,12 +58,11 @@ spec:
         providers:
           kubernetesCRD:
             enabled: true
+          kubernetesIngress:
+            enabled: true
+        experimental:
           kubernetesGateway:
             enabled: true
-            gatewayClass:
-              enabled: true
-              name: traefik
-              controllerName: traefik.io/gateway-controller
   destination:
     server: https://kubernetes.default.svc
     namespace: traefik-system
