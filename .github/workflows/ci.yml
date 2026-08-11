@@ -54,19 +54,15 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r platform-workloads/operators/wordsmith-ops/requirements.txt
-      
-      # - name: Install Dependencies 2
-      #   run: |
-      #     pip install -r platform-workloads/operators/wordsmith-ops/requirements.txt
-      #     pip install flake8 safety
+          pip install flake8 safety
 
-      # - name: Lint Python Code (Flake8)
-      #   working-directory: platform-workloads/operators/wordsmith-ops
-      #   run: |
-      #     flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-      #     flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+      - name: Lint Python Code (Flake8)
+        working-directory: platform-workloads/operators/wordsmith-ops
+        run: |
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
-      # - name: Check Python Dependencies for Vulnerabilities (Safety)
-      #   working-directory: platform-workloads/operators/wordsmith-ops
-      #   run: |
-      #     safety check -r requirements.txt || true
+      - name: Check Python Dependencies for Vulnerabilities (Safety)
+        working-directory: platform-workloads/operators/wordsmith-ops
+        run: |
+          safety check -r requirements.txt || true
