@@ -60,6 +60,11 @@ spec:
             enabled: true
           kubernetesGateway:
             enabled: true
+            # Forces Traefik to explicitly claim the gateway class matching our definition
+            gatewayClass:
+              enabled: true
+              name: traefik
+              controllerName: traefik.io/gateway-controller
   destination:
     server: https://kubernetes.default.svc
     namespace: traefik-system
